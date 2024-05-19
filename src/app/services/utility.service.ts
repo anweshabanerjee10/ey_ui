@@ -75,15 +75,14 @@ export class UtilityService {
         );
 
       payment.amountPaid += this.applyDiscount(
-        cartitem.product.price,
+        cartitem.product.price+0.18*cartitem.product.price,
         cartitem.product.offer.discount
       );
     }
 
-    if (payment.amountPaid > 50000) payment.shipingCharges = 2000;
-    else if (payment.amountPaid > 20000) payment.shipingCharges = 1000;
-    else if (payment.amountPaid > 5000) payment.shipingCharges = 500;
-    else payment.shipingCharges = 200;
+    
+    if(payment.amountPaid)
+    payment.amountPaid+=payment.shipingCharges = 40;
   }
 
   calculatePricePaid(cart: Cart) {
