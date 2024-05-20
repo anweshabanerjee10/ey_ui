@@ -20,6 +20,11 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
+import { AdminComponent } from './admin/admin.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
+import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +42,11 @@ import { JwtModule } from '@auth0/angular-jwt';
     OpenProductDetailsDirective,
     RegisterComponent,
     LoginComponent,
+    AdminComponent,
+    AdminDashboardComponent,
+    AdminOrdersComponent,
+    AdminCustomersComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,

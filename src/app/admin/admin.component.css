@@ -1,0 +1,19 @@
+* {
+    /* padding: 0 !important; */
+    /* margin: 0 !important; */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+span {
+    color: white !important;
+}
+
+.main-content{
+    margin-left: 225px;
+    /* border: 2px solid green; */
+}
