@@ -1,0 +1,13 @@
+.admin-login-div {
+    width: 500px;
+    margin: auto;
+}
+
+h2 {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+form {
+    padding: 0 0.5rem;
+}
