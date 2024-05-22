@@ -1,0 +1,16 @@
+<div class="add-product">
+    <h1>Update Product</h1>
+    <!-- <p class="message-p">{{addProductMessage}}</p> -->
+    <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
+        <input type="number" class="form-input" placeholder="Enter Product Id" name="Id" ngModel />
+
+        <input type="text" class="form-input" placeholder="Enter Product Price" name="Price" ngModel />
+        <!-- <input type="number" class="form-input" placeholder="Enter quantity" name="Quantity" ngModel /> -->
+
+
+
+
+        <button class="form-button">Update Product</button>
+
+    </form>
+</div>

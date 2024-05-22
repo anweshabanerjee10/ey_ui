@@ -61,6 +61,16 @@ export class NavigationService {
     );
   }
 
+  
+  loginAdmin(email: string, password: string) {
+    let url = this.baseurl + 'LoginAdmin';
+    return this.http.post(
+      url,
+      { Email: email, Password: password },
+      { responseType: 'text' }
+    );
+  }
+
   submitReview(userid: number, productid: number, review: string) {
     let obj: any = {
       User: {

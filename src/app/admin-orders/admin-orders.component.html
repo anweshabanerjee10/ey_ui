@@ -1,8 +1,10 @@
-<div class="order-div">
-    <h3>Order Id:</h3>
-    <h4>Customer Id:</h4>
-    <div>Ordered Date: </div>
-    <div>Status:</div>
-    <div>Price:</div>
+<button (click)="_getorderobj. getOrderData() " style="margin :30px">Get Order</button>
 
+<div>
+
+    <ul *ngFor="let order of _getorderobj.orderData">
+        <li>{{order.id}} </li>
+        <!-- <li>{{order.createdAt.date | date : 'yyyy-MM-dd'}</li> -->
+
+    </ul>
 </div>

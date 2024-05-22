@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/models';
-import { FormsModule, } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-
 import { ProductServicesService } from '../services/product-services.service';
+import { NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-admin-dashboard',
-  templateUrl: './admin-dashboard.component.html',
-  styleUrls: ['./admin-dashboard.component.css']
+  selector: 'app-admin-products',
+  templateUrl: './admin-products.component.html',
+  styleUrls: ['./admin-products.component.css'],
+  standalone: true,
+  imports:[FormsModule],
 })
-  
-
-export class AdminDashboardComponent implements OnInit {
-
- 
+export class AdminProductsComponent implements OnInit {
 
    addProductMessage: string | undefined;
   constructor(private product: ProductServicesService) {}
@@ -28,6 +24,7 @@ export class AdminDashboardComponent implements OnInit {
       if (result) {
         this.addProductMessage = 'Product is added successfully';
       }
+      alert("Product has been added")
     });
 
     setTimeout(() => {

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { SuggestedProduct } from '../models/models';
 
@@ -9,7 +10,7 @@ import { SuggestedProduct } from '../models/models';
 export class HomeComponent implements OnInit {
   suggestedProducts: SuggestedProduct[] = [
     {
-      banerimage: 'Baner/Baner_Mobile.png',
+      banerimage: 'Baner_Mobile.png',
       category: {
         id: 0,
         category: 'electronics',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
       },
     },
     {
-      banerimage: 'Baner/Baner_Laptop.png',
+      banerimage: 'Baner_Laptop.png',
       category: {
         id: 1,
         category: 'electronics',
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
       },
     },
     {
-      banerimage: 'Baner/Baner_Chair.png',
+      banerimage: 'Baner_Chair.png',
       category: {
         id: 1,
         category: 'furniture',

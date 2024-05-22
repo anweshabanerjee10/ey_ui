@@ -8,26 +8,53 @@
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li>
                         <a [routerLink]="'/admin/'" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span>
+                        </a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a [routerLink]="'/admin/orders'" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
-                    </li>
+                    </li> -->
                     <li>
-                        <a [routerLink]="'/products'" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                        <a [routerLink]="'/admin/products'" data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Add Products</span> </a>
                     </li>
+
                     <li>
-                        <a [routerLink]="'/admin/customers'" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Customers</span> </a>
+                        <a [routerLink]="'/admin/update/products'" data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Update Product</span>
+                        </a>
                     </li>
+
+                    <li>
+                        <a [routerLink]="'/admin/delete/products'" data-bs-toggle="collapse"
+                            class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Delete Product</span>
+                        </a>
+                    </li>
+
+
+
+                    <li><a class="nav-link px-0 align-middle" href="#" (click)="utilityService.logoutUser()">Sign
+                            out</a></li>
+
+
                 </ul>
+
+
                 <hr>
             </div>
+
+
         </div>
+
+
         <div class="col py-3 main-content">
-                    
+            <button type="button" class="btn btn-outline-light" (click)="utilityService.logoutUser()"
+                *ngIf="utilityService.isLoggedIn()">Logout</button>
+
             <router-outlet></router-outlet>
         </div>
     </div>

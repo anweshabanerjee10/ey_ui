@@ -1,17 +1,24 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GetCustomerListService } from '../services/get-customer-list.service';
 
 @Component({
   selector: 'app-admin-customers',
   templateUrl: './admin-customers.component.html',
   styleUrls: ['./admin-customers.component.css']
 })
-export class AdminCustomersComponent implements OnInit {
-  userList: string[] = ['Mr. Fresh', 'Batura Bhai', 'Nijesh', 'Naruto'];
+export class AdminCustomersComponent  {
+ 
 
-  constructor() { }
-
-  ngOnInit(): void {
+  _getcustobj:GetCustomerListService
+  constructor(_getcusref: GetCustomerListService) {
+    
+    this._getcustobj = _getcusref;
+    
+    
   }
+
+  
 
 }

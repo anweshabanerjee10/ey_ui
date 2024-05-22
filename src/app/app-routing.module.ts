@@ -11,6 +11,10 @@ import { AdminCustomersComponent } from './admin-customers/admin-customers.compo
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AuthGuard } from './admin/auth.guard';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AdminUpdateProductComponent } from './admin-update-product/admin-update-product.component';
+import { AdminDeleteProductComponent } from './admin-delete-product/admin-delete-product.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent, title: 'Home' },
@@ -18,22 +22,37 @@ const routes: Routes = [
   { path: 'product-details', component: ProductDetailsComponent, title: 'Product Detail' },
   { path: 'cart', component: CartComponent, title: 'Cart' },
   { path: 'orders', component: OrderComponent, title: 'Orders' },
-  { path: 'admin', component: AdminComponent, title: 'Admin',
+  { path: 'admin', component: AdminComponent, title: 'Admin',canActivate:[AuthGuard],
     children: [
       {
         path: '',
-        component: AdminDashboardComponent,
+        component: AdminDashboardComponent,canActivate:[AuthGuard],
         title: 'Admin'
       },
       {
         path: 'orders',
         component: AdminOrdersComponent,
-        title: 'Orders'
+        title: 'Orders',canActivate:[AuthGuard],
       },
       {
         path: 'customers',
         component: AdminCustomersComponent,
-        title: 'Customers'
+        title: 'Customers',canActivate:[AuthGuard],
+      },
+       {
+        path: 'products',
+        component: AdminProductsComponent,
+        title: 'Products',canActivate:[AuthGuard],
+      },
+        {
+        path: 'update/products',
+        component: AdminUpdateProductComponent,
+        title: 'Update Products',canActivate:[AuthGuard],
+      },
+        {
+        path: 'delete/products',
+        component: AdminDeleteProductComponent,
+        title: 'Delete Product',canActivate:[AuthGuard],
       }
     ]
    },

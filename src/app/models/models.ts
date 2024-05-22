@@ -20,6 +20,12 @@ export interface User {
   modifiedAt: string;
 }
 
+export interface Admin{
+   id: number;
+  email: string;
+  password: string;
+}
+
 // #region Product
 
 export interface Offer {

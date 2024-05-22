@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Subject, window } from 'rxjs';
-import { Cart, Payment, Product, User } from '../models/models';
+import { Admin, Cart, Payment, Product, User } from '../models/models';
 import { NavigationService } from './navigation.service';
 
 @Injectable({
@@ -38,16 +38,39 @@ export class UtilityService {
     return user;
   }
 
+  getAdmin(): Admin {
+    let token = this.jwt.decodeToken();
+    let admin: Admin = {
+      id: token.id,
+      email: token.email,
+      password: '',
+    };
+    return admin;
+  }
+
+
   setUser(token: string) {
     localStorage.setItem('user', token);
   }
+
+  setAdmin(token: string) {
+    localStorage.setItem('admin', token);
+  }
+
 
   isLoggedIn() {
     return localStorage.getItem('user') ? true : false;
   }
 
+  isAdminLoggedIn() {
+    return localStorage.getItem('admin') ? true : false;
+  }
+
   logoutUser() {
     localStorage.removeItem('user');
+  }
+  logoutAdmin() {
+    localStorage.removeItem('admin')
   }
 
   addToCart(product: Product) {

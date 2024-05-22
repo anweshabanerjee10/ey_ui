@@ -17,7 +17,7 @@ import { OpenProductsDirective } from './directives/open-products.directive';
 import { OpenProductDetailsDirective } from './directives/open-product-details.directive';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { AdminComponent } from './admin/admin.component';
@@ -25,6 +25,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { AdminOrdersComponent } from './admin-orders/admin-orders.component';
 import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AuthInterceptor } from './admin/auth.interceptor';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AdminUpdateProductComponent } from './admin-update-product/admin-update-product.component';
+import { AdminDeleteProductComponent } from './admin-delete-product/admin-delete-product.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +51,14 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     AdminOrdersComponent,
     AdminCustomersComponent,
     AdminLoginComponent,
+    //AdminDeleteProductComponent
+    //AdminUpdateProductComponent,
+    //AdminProductsComponent
   ],
   imports: [
+    AdminDeleteProductComponent,
+    AdminUpdateProductComponent,
+    AdminProductsComponent,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
@@ -64,7 +74,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
       },
     }),
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

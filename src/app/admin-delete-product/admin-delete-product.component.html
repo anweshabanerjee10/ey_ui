@@ -1,0 +1,10 @@
+<div class="add-product">
+    <h1>Delete Product</h1>
+    <!-- <p class="message-p">{{addProductMessage}}</p> -->
+    <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)" class="common-form">
+        <input type="number" class="form-input" placeholder="Enter Product Id" name="Id" ngModel />
+
+        <button class="form-button">Delete Product</button>
+
+    </form>
+</div>

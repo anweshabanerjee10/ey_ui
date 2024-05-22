@@ -31,6 +31,7 @@ img:hover {
     height: 50px;
     overflow: hidden;
 }
+
 .list-view .description {
     height: 75px;
     overflow: hidden;
@@ -41,4 +42,9 @@ img:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.product-grid {
+    height: 620px;
+
 }

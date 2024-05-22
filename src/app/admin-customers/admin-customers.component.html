@@ -1,8 +1,9 @@
+<button (click)="_getcustobj. getCustomerData() " style="margin :30px">Get Customers</button>
+
 <div>
-<h2>Customers List</h2>
-    <ul>
-        <li *ngFor="let user of userList">
-            {{user}}</li>
-            
-        </ul>
+
+    <ul *ngFor="let user of _getcustobj.customerData">
+        <li>{{user.firstName}} {{user.lastName}}</li>
+
+    </ul>
 </div>

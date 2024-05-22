@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { UtilityService } from '../services/utility.service';
 
 @Component({
   selector: 'app-admin',
@@ -8,7 +9,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(public utilityService: UtilityService) { }
 
   ngOnInit(): void {
   }
